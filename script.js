@@ -4,7 +4,6 @@ var alphaLower = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
 var symbols = "!\"#$%&%\'()*+,-./:;<=>?@[]^_`}|}~";
 
-
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -25,10 +24,10 @@ function generatePassword() {
     alert("Please select a number between 8 and 128");
     return passwordCriteria();
   } else {
-    var upperCase = confirm("Do you want the password to include UPPERCASE?");
-    var lowerCase = confirm("Do you want the password to include LOWERCASE?");
-    var numeric = confirm("Do you want the password to include NUMBERS?");
-    var specialChar = confirm("Do you want the password to include SPECIAL CHARACTERS?");
+    var upperCase = confirm("Do you want the password to include UPPERCASE?\n\nSelect OK if yes, cancel if no.");
+    var lowerCase = confirm("Do you want the password to include LOWERCASE?\n\nSelect OK if yes, cancel if no.");
+    var numeric = confirm("Do you want the password to include NUMBERS?\n\nSelect OK if yes, cancel if no.");
+    var specialChar = confirm("Do you want the password to include SPECIAL CHARACTERS?\n\nSelect OK if yes, cancel if no.");
 
     // Ensure user selects at least one criteria for password
     if (!upperCase && !lowerCase && !numeric && !specialChar) {
@@ -63,11 +62,6 @@ function generatePassword() {
       return generatedPassword;
 }
    
-
-
-
-
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
