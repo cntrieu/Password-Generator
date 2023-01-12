@@ -14,7 +14,6 @@ function generatePassword() {
   // Validating each input from user
   if (numberCheck === null) {
     alert("Sorry to see you go");
-    return;
 
     // Ensure user enters a valid number
   } else if(isNaN(numberCheck)) {
