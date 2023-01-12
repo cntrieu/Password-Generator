@@ -1,4 +1,3 @@
-// Assignment code here
 var alphaUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var alphaLower = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "0123456789";
@@ -8,7 +7,7 @@ var symbols = "!\"#$%&%\'()*+,-./:;<=>?@[]^_`}|}~";
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-
+  
   // Prompt user for length of password
   var numberCheck = prompt("Please enter a number between 8 - 128", "8 - 128");
 
@@ -16,14 +15,17 @@ function generatePassword() {
   if (numberCheck === null) {
     alert("Sorry to see you go");
     return;
+
     // Ensure user enters a valid number
   } else if(isNaN(numberCheck)) {
     alert("Please enter numbers only");
-     return passwordCriteria();
+    return generatePassword();
   } else if(numberCheck < 8 || numberCheck > 128) {
     alert("Please select a number between 8 and 128");
-    return passwordCriteria();
+    return generatePassword();
   } else {
+
+    // Criteria for password
     var upperCase = confirm("Do you want the password to include UPPERCASE?\n\nSelect OK if yes, cancel if no.");
     var lowerCase = confirm("Do you want the password to include LOWERCASE?\n\nSelect OK if yes, cancel if no.");
     var numeric = confirm("Do you want the password to include NUMBERS?\n\nSelect OK if yes, cancel if no.");
@@ -64,10 +66,12 @@ function generatePassword() {
    
 // Write password to the #password input
 function writePassword() {
+
+  // Calling the above function
   var password = generatePassword();
-  console.log(password);
   var passwordText = document.querySelector("#password");
 
+  // Using querySelector to change the value
   passwordText.value = password;
 
 }
